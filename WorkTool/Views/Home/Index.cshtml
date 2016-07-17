@@ -1,0 +1,11 @@
+﻿@model WorkTool.Core.Mediator.Projects.List.Result
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<ul>
+    @foreach (var a in Model.Results)
+    {
+        <li>@a.ProjectName</li>
+    }
+</ul>

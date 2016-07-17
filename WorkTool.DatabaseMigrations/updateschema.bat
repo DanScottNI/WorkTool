@@ -1,0 +1,1 @@
+..\packages\FluentMigrator.1.6.2\tools\migrate.exe --conn "server=.\;Integrated Security=true;database=WorkTool" --provider sqlserver2014 --assembly "bin\Debug\WorkTool.DatabaseMigrations.dll" --task migrate --output
