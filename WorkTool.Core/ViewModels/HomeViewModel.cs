@@ -9,6 +9,5 @@ namespace WorkTool.Core.ViewModels
 {
     public class HomeViewModel
     {
-        
     }
 }

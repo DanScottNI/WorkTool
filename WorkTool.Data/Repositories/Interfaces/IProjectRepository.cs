@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WorkTool.Data.Models;
 
-namespace WorkTool.Data.Repositories
+namespace WorkTool.Data.Repositories.Interfaces
 {
     public interface IProjectRepository
     {

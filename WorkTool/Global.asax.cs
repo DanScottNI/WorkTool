@@ -29,7 +29,6 @@ namespace WorkTool
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
             this.SetupDI();
             this.ConfigureAutomapper();
         }

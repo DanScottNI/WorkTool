@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using WorkTool.Data.Models;
+using WorkTool.Data.Repositories.Common;
+using WorkTool.Data.Repositories.Interfaces;
 
 namespace WorkTool.Data.Repositories
 {

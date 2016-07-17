@@ -12,6 +12,10 @@ namespace WorkTool.Core.Mediator.Projects.List
     {
         private readonly IUnitOfWork unitOfWork;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Handler"/> class.
+        /// </summary>
+        /// <param name="unitOfWork">the unit of work.</param>
         public Handler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
@@ -23,14 +27,8 @@ namespace WorkTool.Core.Mediator.Projects.List
 
             IEnumerable<Project> projects = null;
 
-            if (message.UserId.HasValue)
-            {
-                projects = this.unitOfWork.ProjectRepository.All();
-            }
-            else
-            {
-                projects = this.unitOfWork.ProjectRepository.All();
-            }
+            // TODO Make this work, so it returns a users projects.
+            projects = this.unitOfWork.Projects.All();
 
             result.Results = Mapper.Map<Collection<ProjectItemResult>>(projects);
 

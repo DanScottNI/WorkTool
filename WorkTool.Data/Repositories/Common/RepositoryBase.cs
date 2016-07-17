@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkTool.Data.Repositories
+namespace WorkTool.Data.Repositories.Common
 {
     public abstract class RepositoryBase
     {

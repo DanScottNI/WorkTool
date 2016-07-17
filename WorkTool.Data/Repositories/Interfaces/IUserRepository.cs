@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WorkTool.Data.Models;
 
-namespace WorkTool.Data.Repositories
+namespace WorkTool.Data.Repositories.Interfaces
 {
     public interface IUserRepository
     {

@@ -17,7 +17,7 @@ namespace WorkTool.Core.Mediator.Projects.Create
         {
             Project proj = new Project();
             proj.ProjectName = message.Name;
-            this.unitOfWork.ProjectRepository.Add(proj);
+            this.unitOfWork.Projects.Add(proj);
             this.unitOfWork.Commit();
 
             return new Result() { ProjectId = proj.ProjectId };

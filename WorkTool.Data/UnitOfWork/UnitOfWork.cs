@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using WorkTool.Data.Repositories;
+using WorkTool.Data.Repositories.Interfaces;
 using WorkTool.Data.UnitOfWork.Interface;
 
 namespace WorkTool.Data.UnitOfWork
@@ -13,6 +14,7 @@ namespace WorkTool.Data.UnitOfWork
         private IDbTransaction transaction;
 
         private IProjectRepository projectRepository;
+        private IUserRepository userRepository;
 
         private bool disposed;
 
@@ -32,9 +34,20 @@ namespace WorkTool.Data.UnitOfWork
             this.Dispose1(false);
         }
 
-        public IProjectRepository ProjectRepository
+        public IProjectRepository Projects
         {
-            get { return this.projectRepository ?? (this.projectRepository = new ProjectRepository(this.transaction)); }
+            get
+            {
+                return this.projectRepository ?? (this.projectRepository = new ProjectRepository(this.transaction));
+            }
+        }
+
+        public IUserRepository Users
+        {
+            get
+            {
+                return this.userRepository ?? (this.userRepository = new UserRepository(this.transaction));
+            }
         }
 
         public void Commit()
@@ -64,7 +77,8 @@ namespace WorkTool.Data.UnitOfWork
 
         private void ResetRepositories()
         {
-            projectRepository = null;
+            this.projectRepository = null;
+            this.userRepository = null;
         }
 
         private void Dispose1(bool disposing)
